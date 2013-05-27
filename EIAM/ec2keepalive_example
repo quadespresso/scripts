@@ -1,0 +1,16 @@
+{
+ "Statement": [
+   {
+      "Action": [
+        "ec2:RunInstances"
+      ],
+      "Effect": "Allow",
+      "Resource": "*",
+      "Condition": { 
+        "NumericEquals": {
+        "ec2:KeepAlive": "6"
+        }
+      }
+    }
+  ]
+}
