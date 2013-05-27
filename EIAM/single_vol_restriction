@@ -1,0 +1,11 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "ec2:*"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:ec2:::volume/*DCD03C6A"
+    }
+  ]
+}
