@@ -16,46 +16,50 @@
 #   You should have received a copy of the GNU General Public License
 #   along with this program.  If not, see <http://www.gnu.org/licenses/>
 #
-#   Setup multiple IAM acounts on Eucalyptus - 0.1
+#   Setup multiple IAM acounts on Eucalyptus - 0.2
 
 NAME="batman"
+PASSWD="123456"
 SET=2
+EIAMDIR=/root/eucalyptus_iam
+
+# get admin account creds
+mkdir $EIAMDIR/eucalyptus-admin; cd $EIAMDIR/eucalyptus-admin
+euca-get-credentials admin.zip
+unzip admin.zip; source eucarc
 
 # create two account
 for x in `seq $SET`;
 do
+  mkdir $EIAMDIR/$NAME$x
+  cd $EIAMDIR/$NAME$x
   euare-accountcreate -a $NAME$x
-  mkdir $NAME$x
-  cd $NAME$x
 
-  # download other account credentials
-  euca_conf --cred-account $NAME$x --cred-user admin --get-credentials $NAME$x.zip
-  
-  # unzip and source creds
+  # download other account credentials, unzip and source creds
+  euca-get-credentials -a $NAME$x $NAME$x.zip
   unzip $NAME$x.zip; source eucarc
+  euare-useraddloginprofile -u admin -p $PASSWD
+  cd $EIAMDIR/
 
   # create two users
   for i in `seq $SET`;
   do
     euare-usercreate -u $NAME$x-user$i -p /$NAME$x
-    mkdir $NAME$x-user$i; cd $NAME$x-user$i;
+    mkdir $EIAMDIR/$NAME$x-user$i; cd $EIAMDIR/$NAME$x-user$i;
 
     euare-useraddloginprofile -u $NAME$x-user$i -p $NAME$x
     
     # download other account credentials
-    euca_conf --cred-account $NAME$x --cred-user $NAME$x-user$i --get-credentials $NAME$x-user$i.zip
+    euca-get-credentials -a $NAME$x -u $NAME$x-user$i $NAME$x-user$i.zip
     unzip $NAME$x-user$i.zip
-    cd ..
+    cd $EIAMDIR/
   done
 
   # list of users
   euare-userlistbypath
-  cd
-  source ~/.euca/eucarc
+  source $EIAMDIR/eucarc
 done
 
 # list of accounts
 euare-accountlist
-
-# change password for login profile
-#euare-usermodloginprofile -u admin -p shaon2
+cd
