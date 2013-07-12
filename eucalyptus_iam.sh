@@ -47,7 +47,7 @@ do
     euare-usercreate -u $NAME$x-user$i -p /$NAME$x
     mkdir $EIAMDIR/$NAME$x-user$i; cd $EIAMDIR/$NAME$x-user$i;
 
-    euare-useraddloginprofile -u $NAME$x-user$i -p $NAME$x
+    euare-useraddloginprofile -u $NAME$x-user$i -p $PASSWD
     
     # download other account credentials
     euca-get-credentials -a $NAME$x -u $NAME$x-user$i $NAME$x-user$i.zip
