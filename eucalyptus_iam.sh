@@ -18,7 +18,13 @@
 #
 #   Setup multiple IAM acounts on Eucalyptus - 0.2
 
-NAME="batman"
+if [ "$1" = "" ];
+then
+  NAME="batman"
+else
+  NAME="$1"
+fi
+
 PASSWD="123456"
 SET=2
 DIR="eucalyptus_iam"
