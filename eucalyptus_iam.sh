@@ -59,7 +59,7 @@ do
 
   # list of users
   euare-userlistbypath
-  source $EIAMDIR/eucarc
+  source $EIAMDIR/eucalyptus-admin/eucarc
 done
 
 # list of accounts
