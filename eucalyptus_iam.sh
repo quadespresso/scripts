@@ -21,9 +21,11 @@
 NAME="batman"
 PASSWD="123456"
 SET=2
-EIAMDIR=/root/eucalyptus_iam
+DIR="eucalyptus_iam"
+EIAMDIR=/root/$DIR
 
 # get admin account creds
+mkdir $EIAMDIR
 mkdir $EIAMDIR/eucalyptus-admin; cd $EIAMDIR/eucalyptus-admin
 euca-get-credentials admin.zip
 unzip admin.zip; source eucarc
