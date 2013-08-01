@@ -25,9 +25,15 @@ else
   NAME="$1"
 fi
 
+if [ "$2" = "" ];
+then
+  DIR="eucalyptus_iam"
+else
+  DIR="$2"
+fi
+
 PASSWD="123456"
 SET=2
-DIR="eucalyptus_iam"
 EIAMDIR=/root/$DIR
 
 # get admin account creds
