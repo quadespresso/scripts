@@ -53,6 +53,8 @@ do
   euca-get-credentials -a $NAME$x $NAME$x.zip
   unzip $NAME$x.zip; source eucarc
   euare-useraddloginprofile -u admin -p $PASSWD
+  euare-userupdateinfo -k email -i $NAME$x-admin@superhero.net -u admin #eucalyptus only
+
   cd $EIAMDIR/
 
   # create two users
@@ -62,7 +64,8 @@ do
     mkdir $EIAMDIR/$NAME$x-user$i; cd $EIAMDIR/$NAME$x-user$i;
 
     euare-useraddloginprofile -u $NAME$x-user$i -p $PASSWD
-    
+    euare-userupdateinfo -k email -i $NAME$x-user$i@superhero.net -u $NAME$x-user$i #eucalyptus only
+
     # download other account credentials
     euca-get-credentials -a $NAME$x -u $NAME$x-user$i $NAME$x-user$i.zip
     unzip $NAME$x-user$i.zip
