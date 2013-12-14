@@ -1,0 +1,16 @@
+{
+  "Statement": [
+    {
+      "Action": "*",
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "ec2:ModifyInstanceAttribute"
+      ],
+      "Effect": "Deny",
+      "Resource": "arn:aws:ec2:::image/eki-7DB73766"
+    }
+  ]
+}
