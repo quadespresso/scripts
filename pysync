@@ -1,0 +1,63 @@
+#!/usr/bin/env python
+#
+#   Copyright (C) 2014
+#   Imran Hossain Shaon <shaon@eucalyptus.com> / <mdshaonimran@gmail.com>
+#
+#   This program is free software: you can redistribute it and/or modify
+#   it under the terms of the GNU General Public License as published by
+#   the Free Software Foundation, either version 3 of the License, or
+#   (at your option) any later version.
+#
+#   This program is distributed in the hope that it will be useful,
+#   but WITHOUT ANY WARRANTY; without even the implied warranty of
+#   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#   GNU General Public License for more details.
+#
+#   You should have received a copy of the GNU General Public License
+#   along with this program.  If not, see <http://www.gnu.org/licenses/>
+#
+#   sync file between laptop and remote server - 0.01
+
+import sys
+import paramiko
+import hashlib
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--host', help='hostname of the remote server', default='10.111.5.143')
+parser.add_argument('--username', help='username of the remote server', default='root')
+parser.add_argument('--password', help='remote server password', default='foobar')
+parser.add_argument('--local-file', help='local file location', default='testcases/cloud_admin/iam_test.py')
+parser.add_argument('--remote-file', help='absolute remote file location', default='/root/eutesterEnv/eutester/testcases/cloud_admin/iam_test.py')
+args = parser.parse_args()
+
+def main():
+    print 'connecting to ' + args.host
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.connect(args.host, username=args.username, password=args.password)
+    sftp = ssh.open_sftp()
+    update_file = True
+    try:
+        if sftp.stat(args.remote_file):
+          local_hash = hashlib.md5(open(args.local_file).read()).hexdigest()
+          remote_hash = hashlib.md5(sftp.open(args.remote_file).read()).hexdigest()
+    
+          print '\nlocal file:  ' + local_hash + '\nremote file: ' + remote_hash
+          if local_hash != remote_hash:
+              'M: ' + args.local_file
+          else:
+              update_file = False
+    except:
+        print 'A: ' + args.remote_file
+    
+    if update_file:
+        sftp.put(args.local_file, args.remote_file)
+    
+    sftp.close()
+    ssh.close()
+    sys.exit()
+
+if __name__ == '__main__':
+    main()
+
