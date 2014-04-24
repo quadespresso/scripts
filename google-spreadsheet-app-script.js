@@ -18,3 +18,5 @@ function onEdit() {
     sheet.getActiveCell().setFontColor('black');
   }
 };
+
+// zibra stripe [ =MOD(ROW(A2),2) < 1 ]
