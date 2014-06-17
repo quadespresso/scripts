@@ -24,11 +24,11 @@ import hashlib
 import argparse
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--host', help='hostname of the remote server', default='10.111.5.143')
-parser.add_argument('--username', help='username of the remote server', default='root')
-parser.add_argument('--password', help='remote server password', default='foobar')
-parser.add_argument('--local-file', help='local file location', default='testcases/cloud_admin/iam_test.py')
-parser.add_argument('--remote-file', help='absolute remote file location', default='/root/eutesterEnv/eutester/testcases/cloud_admin/iam_test.py')
+parser.add_argument('-H', '--host', help='hostname of the remote server', default='xx.xx.xx.xx')
+parser.add_argument('-U', '--username', help='username of the remote server', default='root')
+parser.add_argument('-P', '--password', help='remote server password', default='foobar')
+parser.add_argument('-L', '--local-file', help='local file location', default='')
+parser.add_argument('-R', '--remote-file', help='absolute remote file location', default='')
 args = parser.parse_args()
 
 def main():
