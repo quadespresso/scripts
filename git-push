@@ -24,7 +24,7 @@ else
     read -p "Push to internal (internal) (y/n)? " answer
     case $answer in
     [Yy]* )
-        git push internal $1
+        git push internal $BRANCH
     ;;
     * )
         echo "Push canceled for internal branch: $BRANCH"
