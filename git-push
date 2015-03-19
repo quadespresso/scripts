@@ -15,7 +15,7 @@ else
     case $answer in
     [Yy]* )
         echo Yes
-        echo "git push origin $1"
+        git push origin $1
     ;;
     * )
         echo No
@@ -26,7 +26,7 @@ else
     case $answer in
     [Yy]* )
         echo Yes
-        echo "git push internal $1"
+        git push internal $1
     ;;
     * )
         echo No
