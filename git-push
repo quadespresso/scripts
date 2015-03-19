@@ -14,21 +14,19 @@ else
     read -p "Push to origin (github) (y/n)? " answer
     case $answer in
     [Yy]* )
-        echo Yes
-        git push origin $1
+        git push origin $BRANCH
     ;;
     * )
-        echo No
+        echo "Push canceled for origin branch: $BRANCH"
     esac
 
     echo ""
     read -p "Push to internal (internal) (y/n)? " answer
     case $answer in
     [Yy]* )
-        echo Yes
         git push internal $1
     ;;
     * )
-        echo No
+        echo "Push canceled for internal branch: $BRANCH"
     esac
 fi
