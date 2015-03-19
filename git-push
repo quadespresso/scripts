@@ -1,0 +1,34 @@
+#!/bin/bash
+
+BRANCH=$1
+
+
+if [ -f $BRANCH ]
+then
+    echo ""
+    echo "No branch found in the argument."
+    echo "usage: git_push <branch>"
+    echo ""
+else
+    echo ""
+    read -p "Push to origin (github) (y/n)? " answer
+    case $answer in
+    [Yy]* )
+        echo Yes
+        echo "git push origin $1"
+    ;;
+    * )
+        echo No
+    esac
+
+    echo ""
+    read -p "Push to internal (internal) (y/n)? " answer
+    case $answer in
+    [Yy]* )
+        echo Yes
+        echo "git push internal $1"
+    ;;
+    * )
+        echo No
+    esac
+fi
