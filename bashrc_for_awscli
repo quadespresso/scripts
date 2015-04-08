@@ -13,6 +13,13 @@ function aws() {
   case $* in
     elb* ) shift 1; command aws elb --endpoint-url $AWS_ELB_URL "$@" | more ;;
     ec2* ) shift 1; command aws ec2 --endpoint-url $EC2_URL "$@" | more ;;
+    s3* ) shift 1; command aws s3 --endpoint-url $S3_URL "$@" | more ;;
+    iam* ) shift 1; command aws iam --endpoint-url $AWS_IAM_URL "$@" | more ;;
+    sts* ) shift 1; command aws sts --endpoint-url $TOKEN_URL "$@" | more ;;
+    cloudformation* ) shift 1; command aws cloudformation --endpoint-url $AWS_CLOUDFORMATION_URL "$@" | more ;;
+    autoscaling* ) shift 1; command aws autoscaling --endpoint-url $AWS_AUTO_SCALING_URL "$@" | more ;;
+    cloudwatch* ) shift 1; command aws cloudwatch --endpoint-url $AWS_CLOUDWATCH_URL "$@" | more ;;
+    swf* ) shift 1; command aws swf --endpoint-url $AWS_SIMPLEWORKFLOW_URL "$@" | more ;;
     * ) command aws "$@" ;;
   esac
 }
