@@ -1,0 +1,23 @@
+#!/bin/bash
+# ^^ for syntaxt highlight only
+
+# .bashrc
+
+# User specific aliases and functions
+
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+
+function aws() {
+  case $* in
+    elb* ) shift 1; command aws elb --endpoint-url $AWS_ELB_URL "$@" | more ;;
+    ec2* ) shift 1; command aws ec2 --endpoint-url $EC2_URL "$@" | more ;;
+    * ) command aws "$@" ;;
+  esac
+}
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+        . /etc/bashrc
+fi
