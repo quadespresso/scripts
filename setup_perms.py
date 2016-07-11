@@ -91,9 +91,7 @@ class SetupPermission(object):
 
         # Copy necessary files
         self.copy_files(self.copyFiles)
-
-        print self.euca_home
-        print self.euca_source
+    
         directories = map(lambda x: os.path.join(self.euca_home, x),
                           self.eucaDirs)
 
