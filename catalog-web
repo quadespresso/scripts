@@ -1,0 +1,118 @@
+{
+  "images": [
+    {
+      "single-kernel": "False",
+      "description": "Ubuntu Trusty x86_64 - login as ubuntu",
+      "virtualization-type": "hvm",
+      "url": "https://cloud-images.ubuntu.com/trusty/current/trusty-server-cloudimg-amd64-disk1.img",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "ubuntu-image",
+      "created-date": "11-09-15",
+      "contact": "ben.howard@ubuntu.com",
+      "version": "Ubuntu Trusty",
+      "architecture": "x86_64",
+      "os": "ubuntu-trusty",
+      "image-format": "img"
+    },
+    {
+      "single-kernel": "False",
+      "description": "Ubuntu Wily x86_64 - login as ubuntu",
+      "virtualization-type": "hvm",
+      "url": "https://cloud-images.ubuntu.com/wily/current/wily-server-cloudimg-amd64-disk1.img",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "ubuntu-image",
+      "created-date": "11-09-15",
+      "contact": "ben.howard@ubuntu.com",
+      "version": "Ubuntu Wily",
+      "architecture": "x86_64",
+      "os": "ubuntu-wily",
+      "image-format": "img"
+    },
+    {
+      "single-kernel": "False",
+      "description": "Fedora 23 x86_64 - login as fedora",
+      "virtualization-type": "hvm",
+      "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/23/Cloud/x86_64/Images/Fedora-Cloud-Base-23-20151030.x86_64.raw.xz",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "fedora-image",
+      "created-date": "11-09-15",
+      "contact": "cloud@lists.fedoraproject.org",
+      "version": "Fedora 23",
+      "architecture": "x86_64",
+      "os": "fedora-23",
+      "image-format": "img"
+    },
+    {
+      "single-kernel": "False",
+      "description": "Fedora 23 x86_64 - login as fedora",
+      "virtualization-type": "hvm",
+      "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/23/Cloud/x86_64/Images/Fedora-Cloud-Atomic-23-20151030.x86_64.raw.xz",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "fedora-image-atomic",
+      "created-date": "11-09-15",
+      "contact": "cloud@lists.fedoraproject.org",
+      "version": "Fedora 23 - Atomic",
+      "architecture": "x86_64",
+      "os": "fedora-23-atomic",
+      "image-format": "img"
+    },
+    {
+      "single-kernel": "False",
+      "description": "Debian Testing (Weekly Build) x86_64 - login as debian",
+      "virtualization-type": "hvm",
+      "url": "http://cdimage.debian.org/cdimage/openstack/testing/debian-testing-openstack-amd64.qcow2",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "debian-image",
+      "created-date": "11-09-15",
+      "contact": "debian-cloud@lists.debian.org",
+      "version": "Debian Testing",
+      "architecture": "x86_64",
+      "os": "debian-testing",
+      "image-format": "qcow2"
+    },
+    {
+      "single-kernel": "False",
+      "description": "CentOS 6.6 x86_64 - login as centos",
+      "virtualization-type": "hvm",
+      "url": "http://cloud.centos.org/centos/6.6/images/CentOS-6-x86_64-GenericCloud.qcow2.xz",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "centos-image",
+      "created-date": "11-09-15",
+      "contact": "centos-virt@centos.org",
+      "version": "CentOS 6.6",
+      "architecture": "x86_64",
+      "os": "centos-6.6",
+      "image-format": "qcow2"
+    },
+    {
+      "single-kernel": "False",
+      "description": "CentOS 7 x86_64 - login as centos",
+      "virtualization-type": "hvm",
+      "url": "http://cloud.centos.org/centos/7/images/CentOS-7-x86_64-GenericCloud.qcow2.xz",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "centos-image",
+      "created-date": "11-09-15",
+      "contact": "centos-virt@centos.org",
+      "version": "CentOS 7",
+      "architecture": "x86_64",
+      "os": "centos-7",
+      "image-format": "qcow2"
+    }
+  ],
+  "version": "eustore-catalog-11-09-15"
+}
+
