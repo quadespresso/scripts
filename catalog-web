@@ -34,6 +34,38 @@
     },
     {
       "single-kernel": "False",
+      "description": "Ubuntu Xenial x86_64 - login as ubuntu",
+      "virtualization-type": "hvm",
+      "url": "https://cloud-images.ubuntu.com/xenial/current/xenial-server-cloudimg-amd64-disk1.img",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "ubuntu-image",
+      "created-date": "09-02-17",
+      "contact": "ben.howard@ubuntu.com",
+      "version": "Ubuntu Xenial",
+      "architecture": "x86_64",
+      "os": "ubuntu-xenial",
+      "image-format": "img"
+    },
+    {
+      "single-kernel": "False",
+      "description": "Ubuntu Yakkety x86_64 - login as ubuntu",
+      "virtualization-type": "hvm",
+      "url": "https://cloud-images.ubuntu.com/yakkety/current/yakkety-server-cloudimg-amd64.img",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "ubuntu-image",
+      "created-date": "14-02-17",
+      "contact": "ben.howard@ubuntu.com",
+      "version": "Ubuntu Yakkety",
+      "architecture": "x86_64",
+      "os": "ubuntu-yakkety",
+      "image-format": "img"
+    },
+    {
+      "single-kernel": "False",
       "description": "Fedora 23 x86_64 - login as fedora",
       "virtualization-type": "hvm",
       "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/23/Cloud/x86_64/Images/Fedora-Cloud-Base-23-20151030.x86_64.raw.xz",
@@ -66,6 +98,38 @@
     },
     {
       "single-kernel": "False",
+      "description": "Fedora 24 x86_64 - login as fedora",
+      "virtualization-type": "hvm",
+      "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/24/CloudImages/x86_64/images/Fedora-Cloud-Base-24-1.2.x86_64.raw.xz",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "fedora-image",
+      "created-date": "06-14-16",
+      "contact": "cloud@lists.fedoraproject.org",
+      "version": "Fedora 24",
+      "architecture": "x86_64",
+      "os": "fedora-24",
+      "image-format": "img"
+    },
+    {
+      "single-kernel": "False",
+      "description": "Fedora 25 x86_64 - login as fedora",
+      "virtualization-type": "hvm",
+      "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/25/CloudImages/x86_64/images/Fedora-Cloud-Base-25-1.3.x86_64.raw.xz",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "fedora-image",
+      "created-date": "11-15-16",
+      "contact": "cloud@lists.fedoraproject.org",
+      "version": "Fedora 25",
+      "architecture": "x86_64",
+      "os": "fedora-25",
+      "image-format": "img"
+    },
+    {
+      "single-kernel": "False",
       "description": "Debian Testing (Weekly Build) x86_64 - login as debian",
       "virtualization-type": "hvm",
       "url": "http://cdimage.debian.org/cdimage/openstack/testing/debian-testing-openstack-amd64.qcow2",
@@ -82,18 +146,18 @@
     },
     {
       "single-kernel": "False",
-      "description": "CentOS 6.6 x86_64 - login as centos",
+      "description": "CentOS 6.8 x86_64 - login as centos",
       "virtualization-type": "hvm",
-      "url": "http://cloud.centos.org/centos/6.6/images/CentOS-6-x86_64-GenericCloud.qcow2.xz",
+      "url": "http://cloud.centos.org/centos/6/images/CentOS-6-x86_64-GenericCloud.qcow2.xz",
       "hypervisors-supported": [
         "kvm"
       ],
       "recipe": "centos-image",
-      "created-date": "11-09-15",
+      "created-date": "02-03-17",
       "contact": "centos-virt@centos.org",
-      "version": "CentOS 6.6",
+      "version": "CentOS 6.8",
       "architecture": "x86_64",
-      "os": "centos-6.6",
+      "os": "centos-6.8",
       "image-format": "qcow2"
     },
     {
@@ -105,7 +169,7 @@
         "kvm"
       ],
       "recipe": "centos-image",
-      "created-date": "11-09-15",
+      "created-date": "02-03-17",
       "contact": "centos-virt@centos.org",
       "version": "CentOS 7",
       "architecture": "x86_64",
@@ -113,6 +177,5 @@
       "image-format": "qcow2"
     }
   ],
-  "version": "eustore-catalog-11-09-15"
+  "version": "eustore-catalog-02-14-17"
 }
-
