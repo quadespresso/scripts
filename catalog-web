@@ -185,11 +185,43 @@
         "kvm"
       ],
       "recipe": "coreos-image",
-      "created-date": "02-03-17",
-      "contact": "????",
+      "created-date": "02-15-17",
+      "contact": "----",
       "version": "CoreOS stable",
       "architecture": "x86_64",
       "os": "coreos-stable",
+      "image-format": "qcow2"
+    },
+    {
+      "single-kernel": "False",
+      "description": "CoreOS beta x86_64 - login as core",
+      "virtualization-type": "hvm",
+      "url": "http://beta.release.core-os.net/amd64-usr/current/coreos_production_openstack_image.img.bz2",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "coreos-image",
+      "created-date": "02-15-17",
+      "contact": "----",
+      "version": "CoreOS beta",
+      "architecture": "x86_64",
+      "os": "coreos-beta",
+      "image-format": "qcow2"
+    },
+    {
+      "single-kernel": "False",
+      "description": "CoreOS alpha x86_64 - login as core",
+      "virtualization-type": "hvm",
+      "url": "http://alpha.release.core-os.net/amd64-usr/current/coreos_production_openstack_image.img.bz2",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "coreos-image",
+      "created-date": "02-15-17",
+      "contact": "----",
+      "version": "CoreOS alpha",
+      "architecture": "x86_64",
+      "os": "coreos-alpha",
       "image-format": "qcow2"
     }
   ],
