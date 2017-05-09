@@ -82,18 +82,18 @@
     },
     {
       "single-kernel": "False",
-      "description": "Fedora 23 x86_64 - login as fedora",
+      "description": "Fedora Atomic 23 - login as fedora",
       "virtualization-type": "hvm",
       "url": "https://download.fedoraproject.org/pub/fedora/linux/releases/23/Cloud/x86_64/Images/Fedora-Cloud-Atomic-23-20151030.x86_64.raw.xz",
       "hypervisors-supported": [
         "kvm"
       ],
-      "recipe": "fedora-image-atomic",
+      "recipe": "fedora-image",
       "created-date": "11-09-15",
       "contact": "cloud@lists.fedoraproject.org",
-      "version": "Fedora 23 - Atomic",
+      "version": "Fedora Atomic 23",
       "architecture": "x86_64",
-      "os": "fedora-23-atomic",
+      "os": "fedora-atomic-23",
       "image-format": "img"
     },
     {
@@ -174,6 +174,22 @@
       "version": "CentOS 7",
       "architecture": "x86_64",
       "os": "centos-7",
+      "image-format": "qcow2"
+    },
+    {
+      "single-kernel": "False",
+      "description": "CentOS Atomic Host 7 - login as centos",
+      "virtualization-type": "hvm",
+      "url": "https://cloud.centos.org/centos/7/atomic/images/CentOS-Atomic-Host-7-GenericCloud.qcow2.xz",
+      "hypervisors-supported": [
+        "kvm"
+      ],
+      "recipe": "centos-image",
+      "created-date": "05-09-17",
+      "contact": "centos-virt@centos.org",
+      "version": "CentOS Atomic 7",
+      "architecture": "x86_64",
+      "os": "centos-atomic-7",
       "image-format": "qcow2"
     },
     {
